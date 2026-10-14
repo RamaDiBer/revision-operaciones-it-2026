@@ -82,6 +82,26 @@ table td.r,table th.r{text-align:right}tr.tot td{font-weight:800;background:var(
 .tg{display:inline-block;background:var(--sky);color:var(--blue);font-weight:800;font-size:.78rem;letter-spacing:.5px;text-transform:uppercase;padding:4px 10px;border-radius:6px;white-space:nowrap}
 .step{background:#fff;border:1px solid var(--line);border-left:6px solid var(--blue);border-radius:10px;padding:0 16px;display:flex;align-items:center;gap:14px;font-size:1.02rem;line-height:1.3;box-shadow:0 3px 12px rgba(0,31,63,.05)}
 .step .n{flex:none;font-weight:800;color:var(--blue);font-size:1.3rem;width:30px}
+
+.hero.fin{gap:8px;padding:30px 52px}
+.logo.xl{font-size:4.4rem;line-height:1}
+.hero.fin h1{font-size:2.6rem;letter-spacing:2px;margin-top:2px}
+.eq{margin-top:14px;font-size:.95rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#9CC7FF;display:flex;align-items:center;gap:14px;width:100%;max-width:1000px}
+.eq::before,.eq::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.3)}
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;width:100%;margin-top:8px;text-align:left}
+.tm{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-top:4px solid #7CB7FF;border-radius:12px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:9px;min-height:178px}
+.tm .ic{background:rgba(255,255,255,.18);color:#fff;margin-bottom:2px}
+.tm b{font-size:1.2rem;letter-spacing:1.5px;text-transform:uppercase;color:#fff}
+.pe{display:flex;align-items:center;gap:10px;font-size:1.02rem}
+.pe svg{width:18px;height:18px;flex:none;fill:none;stroke:#9CC7FF;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.url{margin-top:14px;font-size:.95rem;opacity:.8;letter-spacing:1px}
+
+.st{flex:1;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:14px;text-align:center}
+.st b{font-size:4.6rem;line-height:1}.st span{font-size:1.15rem;opacity:.92}
+.note.ok{background:#E3F6EE;border-color:#BFE6D3;color:#14704B}
+.fw{display:flex;align-items:center;gap:10px;flex:none}
+.fwc{flex:1;display:flex;align-items:center;gap:12px;background:var(--sky);border-radius:10px;padding:12px 16px;font-weight:700;font-size:1.05rem;color:var(--navy);min-height:60px}
+.fwa{color:var(--blue);display:flex}.fwa svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 </style>
 </head>
 <body>
@@ -230,18 +250,22 @@ S('Enllantado GMA',hd('General Motors · Enllantado','Etiquetado GMA','tag')+
  <div class="card"><h3>${I('db')}Datos automáticos desde SIM</h3>${L('list','Desvío interno, desvío externo, estático y cupla')}${L('clock','Fecha y hora de producción')}${L('shield','Trazabilidad centralizada en una sola etiqueta','ok')}</div></div>`)),
 
 S('Rodney: Ferbi',hd('RODNEY','Puestos Ferbi','pc')+
- ban('pc','Implementación de puestos operativos en Ferbi','Instalación de 4 puestos de trabajo completos')+
- row('c2" style="grid-template-columns:.9fr 1.1fr',row('c2',cc('pc','Computadoras','Configuración de PCs')+cc('printer','Impresoras','Instaladas y configuradas')+cc('net','Red Ethernet','Cableado para datos')+cc('check','Resultado','Infraestructura lista para crecimiento del sector','ok'))+
- pv('Foto de puestos Ferbi','ferbi'))),
+ ban('pc','Implementación de puestos operativos en Ferbi','Instalación de puestos de trabajo completos en el sector')+
+ row('c2" style="grid-template-columns:1.1fr .9fr',pv('Foto de puestos Ferbi','ferbi')+
+ col(`<div class="st"><b>4</b><span>puestos de trabajo completos</span></div>`+
+ `<div class="card" style="flex:none">${L('pc','Configuración de computadoras e impresoras')}${L('net','Implementación de red Ethernet para datos')}</div>`+
+ `<div class="note ok" style="flex:none">${I('check','ok')}<span>Resultado: infraestructura preparada para nuevas operaciones y crecimiento del sector</span></div>`))),
 
 S('Rodney: Fenrir',hd('RODNEY','Estaciones Fenrir','chip')+
- ban('chip','Optimización de estaciones Fenrir','Migración a SSD M.2 de 4 TB')+
- row('c2" style="grid-template-columns:.9fr 1.1fr',row('c2',cc('chip','SSD M.2 4 TB','Migración de estaciones')+cc('db','Más capacidad','Incremento de almacenamiento')+cc('db','HDD conservado','Almacenamiento adicional')+cc('chart','Resultado','Estaciones más rápidas y mayor capacidad','ok'))+
- pv('Foto de estaciones Fenrir','fenrir'))),
+ ban('chip','Optimización de estaciones Fenrir','Migración de las estaciones a SSD M.2 de 4 TB')+
+ `<div class="fw"><div class="fwc">${I('db','dark')}Disco HDD de las estaciones</div><div class="fwa"><svg><use href="#i-arrow"/></svg></div><div class="fwc">${I('chip','dark')}SSD M.2 de 4 TB</div><div class="fwa"><svg><use href="#i-arrow"/></svg></div><div class="fwc">${I('chart','ok')}Más capacidad y rendimiento</div></div>`+
+ row('c2',pv('Foto de estaciones Fenrir','fenrir')+
+ col(cc('db','HDD conservado','Queda como almacenamiento adicional')+cc('check','Resultado','Estaciones más rápidas y mayor capacidad disponible para la operación','ok')))),
 
 S('Rodney: Red',hd('RODNEY','Infraestructura de red','net')+
  ban('net','Mejora de infraestructura de red en depósito','Cobertura y conectividad para los dispositivos Hand Held')+
- row('c2" style="grid-template-columns:1.25fr .75fr',row('c2',cc('wifi','2 Access Points','Instalados en el depósito')+cc('net','Nuevas bocas de red','Puntos de conexión')+cc('server','Cobertura','Ampliación de cobertura y conectividad')+cc('check','Resultado','WiFi estable y operatividad de Hand Held','ok'))+
+ row('c4" style="flex:none',kpi('wifi','','Access Points','2','Instalados en el depósito')+kpi('net','','Bocas de red','Nuevas','Puntos de conexión')+kpi('chart','','Cobertura','Ampliada','Conectividad en el sector')+kpi('check','ok','Hand Held','Operativos','WiFi estable'))+
+ row('w" style="grid-template-columns:1.3fr .7fr',col(cc('net','Qué hicimos','Nuevas bocas de red y 2 Access Points para ampliar la cobertura y la conectividad')+cc('check','Resultado','Mejor cobertura WiFi y estabilidad de red: garantiza la operatividad de los Hand Held en el sector','ok'))+
  pv('Foto del depósito','red'))),
 
 S('Escobar: Lexmark',hd('ESCOBAR','Impresoras · CBC Group','printer')+
@@ -285,7 +309,15 @@ S('Próximos pasos',hd('PRÓXIMOS PASOS','Hoja de ruta','list')+
  col(['<span class="tg">Fortinox</span> Actualizar la red del proyecto Kojima TASA','<span class="tg">Fortinox</span> Refinar el proyecto Patagonia','<span class="tg">Fortinox</span> Mejorar el proceso de Yazaki','<span class="tg">Enllantado</span> Modificar etiqueta de producto final de línea','<span class="tg">Enllantado</span> Agregar planta Enllantado GM al KPI Downtime'].map((t,i)=>`<div class="step" style="flex:1"><span class="n">${i+1}</span><div>${t}</div></div>`).join(''))+
  col(['<span class="tg">Rodney</span> Mantenimiento y formateo de discos de las PC de la línea Buyback','<span class="tg">Escobar / Rodney</span> Refinamiento de Odoo 18','<span class="tg">Cross · Planificación</span> Analítica avanzada para la planificación','<span class="tg">Cross</span> Mejorar la infraestructura del Data Center','<span class="tg">Cross · Ingeniería</span> Monitoreo de energía de contingencia'].map((t,i)=>`<div class="step" style="flex:1"><span class="n">${i+6}</span><div>${t}</div></div>`).join('')))),
 
-hero('Gracias','MUCHAS GRACIAS','www.mirgor.com.ar','<span class="badge">Revisión Operaciones IT · 2026</span>')
+`<section class="hero fin" data-t="Gracias">
+ <div class="logo xl">Mirgor<i>+</i></div>
+ <h1>MUCHAS GRACIAS</h1>
+ <div class="eq">Equipo de Sistemas Plantas</div>
+ <div class="team">
+  ${[['gear','Fortinox',['Brian Guerrero','Agustin Schanwarzkoff']],['box','Rodney',['Ramiro Di Bernardo']],['tv','Escobar',['Tiago Segovia','Joaquin Gonzalez']],['server','Cross',['Tomas Quinteros','Lucas Rodriguez']]].map(([ic,p,n])=>`<div class="tm">${I(ic)}<b>${p}</b>${n.map(x=>`<div class="pe"><svg><use href="#i-users"/></svg>${x}</div>`).join('')}</div>`).join('')}
+ </div>
+ <div class="url">www.mirgor.com.ar</div>
+</section>`
 ];
 
 /* ---------- MOTOR ---------- */
